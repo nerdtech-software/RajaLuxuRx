@@ -24,7 +24,7 @@ const Video = () => {
             <h1 className="text-white text-3xl sm:text-5xl font-bold mb-6 leading-snug">
               Top Rated Limousine <br /> Service in Chicago, IL
             </h1>
-            <button className="bg-yellow-600 text-white hover:bg-yellow-700 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-10 py-3">
+            <button className="bg-yellow-600 text-white hover:bg-yellow-700 focus:ring-4 focus:ring-yellow-300 font-medium  text-sm px-10 py-3">
               <a href="tel:+1800229933">Book Now</a>
             </button>
           </div>

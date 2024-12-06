@@ -9,23 +9,39 @@ const BookingForm = () => {
 
   return (
     <div>
-        <img src="https://s3-alpha-sig.figma.com/img/8ee7/6cee/f0e1aa0669c8bbe1fbad49c398671baa?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Bn0Gv6KEBFlcmuyGZeX8t7DryCR-Y6Vf6RunxQOWnVQwckxyYe3usvO~aa-bp~IG-zQu-VF25s4l-RMaCRueRijIGxp3CgCU~3EmqXfrgU6GF-yOr9Dxmrac-xCkB7lhuAC5QLMjn6kTGPw8NNya~j4Bnrye45TdoHo92mTmg30EfNEYp1YcfbBjjeuwS8~cZ8h1xeuwZsQlYZadx8CDbEhblJ39~BTT62dfbsPic6QOZZ4MaFNHtfQdyX1pvdZIKU28iUyX5PEOnX4uit~kt~3ELNJl7HA2T03GKxlS2QSUB9i2hoM6B~YdDbXm6h5PUNvAm6CU4NTiUx~nGV~Z6w__" alt=""  className="w-full  my-11 "/>
+      
+
+      <div
+    className="relative bg-cover bg-center h-[400px] md:h-[500px]"
+    style={{
+      backgroundImage:
+        "url('https://s3-alpha-sig.figma.com/img/8ee7/6cee/f0e1aa0669c8bbe1fbad49c398671baa?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Bn0Gv6KEBFlcmuyGZeX8t7DryCR-Y6Vf6RunxQOWnVQwckxyYe3usvO~aa-bp~IG-zQu-VF25s4l-RMaCRueRijIGxp3CgCU~3EmqXfrgU6GF-yOr9Dxmrac-xCkB7lhuAC5QLMjn6kTGPw8NNya~j4Bnrye45TdoHo92mTmg30EfNEYp1YcfbBjjeuwS8~cZ8h1xeuwZsQlYZadx8CDbEhblJ39~BTT62dfbsPic6QOZZ4MaFNHtfQdyX1pvdZIKU28iUyX5PEOnX4uit~kt~3ELNJl7HA2T03GKxlS2QSUB9i2hoM6B~YdDbXm6h5PUNvAm6CU4NTiUx~nGV~Z6w__')", // Replace with your car image URL
+    }}
+  >
+    {/* Overlay for Darkening Background */}
+  
+
+    {/* Centered Content */}
+    <div className="relative flex flex-col items-center justify-center text-center text-white h-full">
+      <h1 className="text-2xl md:text-4xl font-bold">
+      Elite O’Hare Limo Airport <br />Services
+      </h1>
+      <button className="mt-6 bg-yellow-600 text-white py-2 px-6  hover:bg-yellow-700">
+        Book Now
+      </button>
+    </div>
+    </div>
+
+
+
+
+     
     <section className="bg-gray-100 py-10">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
         <h2 className="text-2xl font-bold text-center mb-6">Book Now</h2>
-        <form className="space-y-6">
-          {/* Service Type */}
-          <div>
-            <label className="block text-gray-700 font-semibold mb-2">
-              Service Type
-            </label>
-            <select className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-gold-500">
-              <option>Select</option>
-              <option>Standard</option>
-              <option>Luxury</option>
-            </select>
-          </div>
 
+        
+        <form className="space-y-6">
           {/* Name and Phone */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -167,6 +183,7 @@ const BookingForm = () => {
       </div>
     </section>
     </div>
+    
   );
 };
 

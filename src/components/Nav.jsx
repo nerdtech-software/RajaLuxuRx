@@ -26,7 +26,7 @@ const Nav = () => {
           {/* Desktop Menu */}
           <ul className={`hidden md:flex space-x-6`}>
             <li>
-              <a href="#" className="hover:text-gray-300 transition duration-300">
+              <a href="/" className="hover:text-gray-300 transition duration-300">
                 Home
               </a>
             </li>
@@ -36,6 +36,7 @@ const Nav = () => {
               </Link>
             </li>
             <li className="relative">
+              <Link to="/vehicles">
               <button
                 onClick={toggleDropdown}
                 className="flex items-center hover:text-gray-300 transition duration-300"
@@ -51,6 +52,7 @@ const Nav = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
+              </Link>
               {isDropdownOpen && (
                 <ul className="absolute left-0 mt-2 w-40 bg-gray-800 text-white rounded-lg shadow-lg">
                   <li>
@@ -82,12 +84,12 @@ const Nav = () => {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300 transition duration-300">
+              <a href="/about" className="hover:text-gray-300 transition duration-300">
                 About Us
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300 transition duration-300">
+              <a href="/contact" className="hover:text-gray-300 transition duration-300">
                 Contact Us
               </a>
             </li>
