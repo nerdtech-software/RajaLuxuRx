@@ -63,9 +63,9 @@ const BookingInfo = () => {
     backgroundImage: `url(${car})`, // Assuming 'car' contains the URL of the image
   }}
 >
-  <div className="bg-black bg-opacity-50 p-8 rounded-md">
+  <div className="bg-black bg-opacity-50 p-20    ">
     <h2 className="text-3xl font-bold text-white mb-4">
-      Unmatched Customer Satisfaction
+      Unmatched Customer <br /> Satisfaction
     </h2>
     <button className="bg-yellow-500 text-black px-6 py-3 my-11 hover:bg-yellow-600">
       Book Now

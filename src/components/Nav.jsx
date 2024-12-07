@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/62cb2645cb0ce4d6584c2d13d226fdba.png"; // Replace with your logo path
 
 const Nav = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
@@ -13,6 +14,8 @@ const Nav = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
   };
+
+  const isActiveLink = (path) => location.pathname === path;
 
   return (
     <header className="absolute top-0 left-0 w-full z-10">
@@ -24,19 +27,28 @@ const Nav = () => {
           </a>
 
           {/* Desktop Menu */}
-          <ul className={`hidden md:flex space-x-6`}>
+          <ul className="hidden md:flex space-x-6">
             <li>
-              <a href="/" className="hover:text-gray-300 transition duration-300">
+              <Link
+                to="/"
+                className={`hover:text-yellow-500 transition duration-300 ${
+                  isActiveLink("/") ? "text-yellow-500 font-semibold" : ""
+                }`}
+              >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <Link to="/booking" className="hover:text-gray-300 transition duration-300">
+              <Link
+                to="/booking"
+                className={`hover:text-yellow-500 transition duration-300 ${
+                  isActiveLink("/booking") ? "text-yellow-500 font-semibold" : ""
+                }`}
+              >
                 Book Now
               </Link>
             </li>
             <li className="relative">
-              <Link to="/vehicles">
               <button
                 onClick={toggleDropdown}
                 className="flex items-center hover:text-gray-300 transition duration-300"
@@ -52,46 +64,70 @@ const Nav = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              </Link>
               {isDropdownOpen && (
                 <ul className="absolute left-0 mt-2 w-40 bg-gray-800 text-white rounded-lg shadow-lg">
                   <li>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-700 transition">
+                    <Link
+                      to="/vehicles/sedan"
+                      className={`block px-4 py-2 hover:bg-gray-700 transition ${
+                        isActiveLink("/vehicles/sedan") ? "bg-gray-700" : ""
+                      }`}
+                    >
                       Sedan
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-700 transition">
+                    <Link
+                      to="/vehicles/suv"
+                      className={`block px-4 py-2 hover:bg-gray-700 transition ${
+                        isActiveLink("/vehicles/suv") ? "bg-gray-700" : ""
+                      }`}
+                    >
                       SUV
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-700 transition">
+                    <Link
+                      to="/vehicles/limousine"
+                      className={`block px-4 py-2 hover:bg-gray-700 transition ${
+                        isActiveLink("/vehicles/limousine") ? "bg-gray-700" : ""
+                      }`}
+                    >
                       Limousine
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               )}
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300 transition duration-300">
+              <Link
+                to="/service"
+                className={`hover:text-yellow-500 transition duration-300 ${
+                  isActiveLink("/service") ? "text-yellow-500 font-semibold" : ""
+                }`}
+              >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300 transition duration-300">
-                States
-              </a>
-            </li>
-            <li>
-              <a href="/about" className="hover:text-gray-300 transition duration-300">
+              <Link
+                to="/about"
+                className={`hover:text-yellow-500 transition duration-300 ${
+                  isActiveLink("/about") ? "text-yellow-500 font-semibold" : ""
+                }`}
+              >
                 About Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-gray-300 transition duration-300">
+              <Link
+                to="/contact"
+                className={`hover:text-yellow-500 transition duration-300 ${
+                  isActiveLink("/contact") ? "text-yellow-500 font-semibold" : ""
+                }`}
+              >
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -117,12 +153,22 @@ const Nav = () => {
         {isMobileMenuOpen && (
           <ul className="md:hidden flex flex-col space-y-4 bg-gray-800 p-4">
             <li>
-              <a href="#" className="hover:text-gray-300 transition duration-300">
+              <Link
+                to="/"
+                className={`hover:text-gray-300 transition duration-300 ${
+                  isActiveLink("/") ? "text-yellow-500 font-semibold" : ""
+                }`}
+              >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <Link to="/booking" className="hover:text-gray-300 transition duration-300">
+              <Link
+                to="/booking"
+                className={`hover:text-gray-300 transition duration-300 ${
+                  isActiveLink("/booking") ? "text-yellow-500 font-semibold" : ""
+                }`}
+              >
                 Book Now
               </Link>
             </li>
@@ -145,42 +191,37 @@ const Nav = () => {
               {isDropdownOpen && (
                 <ul className="mt-2 bg-gray-700 text-white rounded-lg shadow-lg">
                   <li>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-600 transition">
+                    <Link
+                      to="/vehicles/sedan"
+                      className={`block px-4 py-2 hover:bg-gray-600 transition ${
+                        isActiveLink("/vehicles/sedan") ? "bg-gray-600" : ""
+                      }`}
+                    >
                       Sedan
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-600 transition">
+                    <Link
+                      to="/vehicles/suv"
+                      className={`block px-4 py-2 hover:bg-gray-600 transition ${
+                        isActiveLink("/vehicles/suv") ? "bg-gray-600" : ""
+                      }`}
+                    >
                       SUV
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-600 transition">
+                    <Link
+                      to="/vehicles/limousine"
+                      className={`block px-4 py-2 hover:bg-gray-600 transition ${
+                        isActiveLink("/vehicles/limousine") ? "bg-gray-600" : ""
+                      }`}
+                    >
                       Limousine
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               )}
-            </li>
-            <li>
-              <a href="#" className="hover:text-gray-300 transition duration-300">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-gray-300 transition duration-300">
-                States
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-gray-300 transition duration-300">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-gray-300 transition duration-300">
-                Contact Us
-              </a>
             </li>
           </ul>
         )}

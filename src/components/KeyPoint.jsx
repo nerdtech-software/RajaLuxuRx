@@ -59,8 +59,8 @@ const KeyPoint = () => {
       </section>
 
       {/* Section 2: Key Points */}
-      <section className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4 lg:flex lg:items-center lg:justify-between lg:gap-8">
+      <section className="bg-[#3D1F1F]  text-white py-12">
+        <div className="container mx-auto px-4 lg:flex lg:items-center lg:justify-center lg:gap-8">
           {/* Text Section */}
           <div className="lg:w-1/2 space-y-6">
             <h2 className="text-3xl font-bold">Key Points About Raja Luxury Limousine</h2>
@@ -75,7 +75,7 @@ const KeyPoint = () => {
                 </li>
               ))}
             </ul>
-            <button className="mt-6 bg-yellow-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-yellow-600">
+            <button className="mt-6 bg-yellow-500 text-white font-bold py-3 px-6  hover:bg-yellow-600">
               Book Now
             </button>
           </div>
@@ -86,9 +86,9 @@ const KeyPoint = () => {
               <img
                 src="https://s3-alpha-sig.figma.com/img/6c85/ceb3/43f804b209a8bd2cf366afce91531736?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Mwn0e~SKOdobb2qSDQ-3tSMNidlDa-iJi7gu~WEIGOp4bSakbiTkIkXfsUG7k2j2pdwOORFUVVEMIJmy3K8yyie8wLpC5-yohsEkanQbbxFjbh7JK1Spi5a45rr0qX16huQqhH56DKD-GSBF3OJM~~yOMtHQbRzh2slVnXm3VX2inuI6tLdQRcrOH0IJhe~pAUoIPQJp0XNukWmidi4dUTFkJMJpgUQnyRwIDvkjwuVLHVj1nAas7J13otfRntz8qC02FNA-8EvfWymh79CwsnfDVSTsZ7YZQVH9BjEP8aD2~G9-o9jlgc0b9GmjWxZXSI8KsY1NO4eE9WSWOKV1aQ__"
                 alt="Car"
-                className="rounded-lg shadow-lg"
+                className=" shadow-lg "
               />
-              <div className="absolute top-4 right-4 w-full h-full border-4 border-yellow-500 rounded-lg transform translate-x-2 translate-y-2"> </div>
+              <div className="absolute top-4 right-4 w-full h-full border-4 border-yellow-500  transform translate-x-2 translate-y-2"> </div>
             </div>
           </div>
         </div>

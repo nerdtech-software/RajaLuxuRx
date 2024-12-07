@@ -5,6 +5,7 @@ import About from "./page/about";
 import BookingForm from "./page/BookingForm";
 import ContactPage from "./page/ContactPage";
 import Home from "./page/Home";
+import Service from "./page/Service";
 import Vehicles from "./page/Vehicles";
 
 
@@ -39,8 +40,12 @@ function App() {
        element:<ContactPage/>
       },
       {
-       path:"/vehicles",
+       path:"/vehicles/sedan",
        element:<Vehicles/>
+      },
+      {
+       path:"/service",
+       element:<Service/>
       },
     ]
    }

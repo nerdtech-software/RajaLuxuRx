@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const LimoServices = () => {
   const [activeTab, setActiveTab] = useState("Sedan");
@@ -63,19 +64,19 @@ const LimoServices = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="container mx-auto px-4 mt-12 bg-white shadow-lg rounded-lg py-8 flex flex-col lg:flex-row lg:items-center lg:justify-between">
+      <div className="container mx-auto px-4 mt-12 bg-white   py-8 flex flex-col lg:flex-row lg:items-center lg:justify-center">
         <div className="space-y-4 lg:w-3/4">
           <h2 className="text-2xl font-bold">Limo Services</h2>
-          <p className="text-gray-600">
+          <p className="text-gray-600 ">
             Hi88Limo goes beyond ordinary car services, offering a variety of
-            limousine options to elevate any event. Whether you require a
+            limousine options to elevate any event. <br /> Whether you require a
             professional presence for corporate events, a dignified ride for
-            funerals, or a luxurious start or end to your journey, we’ll have
+            funerals, or a luxurious <br /> start or end to your journey, we’ll have
             the perfect limousine service for you.
           </p>
         </div>
-        <button className="mt-6 lg:mt-0 bg-yellow-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-yellow-600">
-          Book Now
+        <button className="mt-6 lg:mt-0 bg-yellow-500 text-white font-bold py-3 px-6  hover:bg-yellow-600">
+      <Link to="/booking"> Book Now</Link>   
         </button>
       </div>
       <div className="w-full p-8 space-y-16">
@@ -95,10 +96,10 @@ const LimoServices = () => {
           ))}
         </div>
         <div className="flex justify-center space-x-4">
-          <button className="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+          <button className="p-2  rounded-full  hover:bg-gray-300">
             ←
           </button>
-          <button className="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+          <button className="p-2 rounded-full  hover:bg-gray-300">
             →
           </button>
         </div>
