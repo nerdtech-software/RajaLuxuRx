@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import car from "../assets/af0b88853568b01076891995e8224974.jpeg";
 
 const BookingInfo = () => {
@@ -67,9 +68,9 @@ const BookingInfo = () => {
     <h2 className="text-3xl font-bold text-white mb-4">
       Unmatched Customer <br /> Satisfaction
     </h2>
-    <button className="bg-yellow-500 text-black px-6 py-3 my-11 hover:bg-yellow-600">
-      Book Now
-    </button>
+    <Link to="/booking"><button className="mt-6 bg-yellow-600 text-white py-2 px-6  hover:bg-yellow-700">
+            Book Now
+          </button></Link>
   </div>
 </section>
 

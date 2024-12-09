@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const AboutUsInfo = () => {
   return (     
     <div>
@@ -12,9 +14,9 @@ const AboutUsInfo = () => {
           <h1 className="text-2xl md:text-4xl font-bold">
             Elite O’Hare Limo Airport <br />Services
           </h1>
-          <button className="mt-6 bg-yellow-600 text-white py-2 px-6  hover:bg-yellow-700">
+         <Link to="/booking"><button className="mt-6 bg-yellow-600 text-white py-2 px-6  hover:bg-yellow-700">
             Book Now
-          </button>
+          </button></Link>
         </div>
         <p className="text-center text-gray-700 text-lg bg-gray-200 py-5">
           We have got you covered! With our luxurious O’Hare Limo Airport
@@ -48,8 +50,8 @@ const AboutUsInfo = () => {
                 that your trip is not only luxurious but also seamless and
                 stress-free.
               </p>
-              <button className="bg-yellow-600 text-white py-2 px-6  hover:bg-yellow-700">
-                Book Now
+              <button className="bg-yellow-600 text-white py-2 px-6  hover:bg-yellow-700" >
+              Book Now
               </button>
             </div>
           </div>

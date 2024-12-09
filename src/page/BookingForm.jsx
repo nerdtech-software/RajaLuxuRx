@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const BookingForm = () => {
   const [passengers, setPassengers] = useState(1);
@@ -26,9 +27,9 @@ const BookingForm = () => {
       <h1 className="text-2xl md:text-4xl font-bold">
       Elite O’Hare Limo Airport <br />Services
       </h1>
-      <button className="mt-6 bg-yellow-600 text-white py-2 px-6  hover:bg-yellow-700">
-        Book Now
-      </button>
+      <Link to="/booking"><button className="mt-6 bg-yellow-600 text-white py-2 px-6  hover:bg-yellow-700">
+            Book Now
+          </button></Link>
     </div>
     </div>
 

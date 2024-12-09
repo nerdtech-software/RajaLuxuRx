@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 
 const MakeUsBest = () => {
@@ -14,9 +15,9 @@ const MakeUsBest = () => {
       <h1 className="text-2xl md:text-4xl font-bold">
       Elite O’Hare Limo Airport <br />Services
       </h1>
-      <button className="mt-6 bg-yellow-600 text-white py-2 px-6  hover:bg-yellow-700">
-        Book Now
-      </button>
+      <Link to="/booking"><button className="mt-6 bg-yellow-600 text-white py-2 px-6  hover:bg-yellow-700">
+            Book Now
+          </button></Link>
     </div>
     </div>
       <div className="text-center p-8 bg-gray-100">
