@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const MakeUsBest = () => {
   return (
-    <div> 
+    <div > 
        <div
     className="relative bg-cover bg-center h-[400px] md:h-[500px]"
     style={{

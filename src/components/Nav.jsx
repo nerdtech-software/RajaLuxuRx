@@ -53,7 +53,7 @@ const Nav = () => {
                 onClick={toggleDropdown}
                 className="flex items-center hover:text-gray-300 transition duration-300"
               >
-                Vehicles
+                Vehicles8
                 <svg
                   className="w-4 h-4 ml-1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -170,6 +170,36 @@ const Nav = () => {
                 }`}
               >
                 Book Now
+              </Link>
+            </li>
+            <li>
+              <Link
+               to="/service"
+                className={`hover:text-gray-300 transition duration-300 ${
+                  isActiveLink("/booking") ? "text-yellow-500 font-semibold" : ""
+                }`}
+              >
+                Service
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                className={`hover:text-gray-300 transition duration-300 ${
+                  isActiveLink("/booking") ? "text-yellow-500 font-semibold" : ""
+                }`}
+              >
+               About US
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className={`hover:text-gray-300 transition duration-300 ${
+                  isActiveLink("/booking") ? "text-yellow-500 font-semibold" : ""
+                }`}
+              >
+               Contact
               </Link>
             </li>
             <li>
