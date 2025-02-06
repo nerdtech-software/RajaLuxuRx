@@ -1,4 +1,4 @@
-import AboutUsInfo from "../components/aboutUsInfo"
+import AboutUsInfo from "../components/AboutUsInfo"
 
 
 const About = () => {
