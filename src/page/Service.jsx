@@ -1,5 +1,5 @@
 
-import AboutUsInfo from '../components/aboutUsInfo'
+import AboutUsInfo from '../components/AboutUsInfo'
 import ServiceInfo from '../components/ServiceInfo'
 import VehiclesFAQ from '../components/VehiclesFAQ'
 import WhyChooseUsServices from '../components/WhyChooseUsServices'
