@@ -1,10 +1,10 @@
 const Registration = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-10">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-10 relative ">
       <div className="max-w-5xl w-full bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="flex flex-col lg:flex-row">
           {/* Left Section - Text */}
-          <div className="lg:w-1/2 p-8 bg-gray-50">
+          <div className="lg:w-1/2 p-8 bg-gray-50 ">
             <h1 className="text-2xl font-bold mb-4">Best Rental Car</h1>
             <h2 className="text-4xl font-bold mb-6">Book Your Ride</h2>
             <p className="text-gray-600 mb-6">

@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import car1 from "../assets/car4.jpg";
+import car2 from "../assets/car5.jpg";
+import car3 from "../assets/car6.jpg";
 
 const LimoServices = () => {
   const [activeTab, setActiveTab] = useState("Sedan");
@@ -15,20 +18,20 @@ const LimoServices = () => {
         {/* Image Collage */}
         <div className="lg:w-1/2 grid grid-cols-2 gap-4">
           <img
-           src="https://s3-alpha-sig.figma.com/img/aa37/0aea/a5fbbdd472a55a3e3b7de6c94f4c81b0?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=OV0g48CWCUije1szUN3Hu7NWKL1sQ6jOQTwy5X8PjmWnm25mTbia4yVPUuOS-iu42-WHiY6nIWvdCykxDn0T0fBFq7oQDq1AOqWU4Cr3aapxTVJcAIkWqWwJvLYr1prpndUEDtXNauOzI1eUOSu6FkUc-DZrhtNeg8kJQ0UJo576SwEa4NxjWkWdFYR8K8X2rFDfv~0dgZU4p-vb4DgEQeycQ9~8d8roRpAivXFXLpF5s~QJHUGUBrSHc-BJdGwIHgWuRZ4OQI6ICPRbYG4H7GOsFyAzOq0YXYMAlYJqof0RAxI3fk5JdM7QK8N-YV7Zzan2mTZWHcMUfYHjjkving__"
+           src={car1}
            
             alt="Car 1"
             className="rounded-lg object-cover w-72"
           />
           <img
-            src="https://s3-alpha-sig.figma.com/img/731e/5a04/f3f0d8c4a8eae4854f9b443797636d7c?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=RvF-npCWK~rGBl4~9rTrCQeqijQJF2RsbIa0r7F-6PQMt2Jf9eXO~Jyqp7pSrHDA7ZOFO822E501Fd6S11mzzJEy4NjztrPsBhDTJkkbRecrn5Db7UGGeMRnlSDcQGy3uEHGdKIgDJkfRiQGerMsGFs4829~5x4Ms8eqZtzdE-h7l~qD01MUskceK4izHmIrIBuxzW1j5EJkMKtKbYQ140G5TSHUXJtiWTb3o-HB0RqK1y7yMkuJgasMZ-nduyOa5T5nm-kdamrI0xhLg3SQ8AL6cB7ZiazV4IxN~MCPlSmj4o93JzH4ggXsTEo5qunxci3upmjx9n2h8wdhSxXuVg__"
-            alt="Car 2"
+          src={car3}
             className="rounded-lg object-cover"
           />
           <img
-            src="https://s3-alpha-sig.figma.com/img/7fbf/45be/c332c5641b5cadcd6e75731d6bb2d1f9?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=MDcVFVNlDUgo65biS6EGTsDX6QfIPrOqqdHX0fki2l4FVXWBHuDiqRbU5MFdcnWK6CSaXvq2ghtKYNm7YfvlQayHnJP5MDwm7x5vRdXdG5n7Xz7VzzTIOJv8fajIhTWL4x-QuP7bAL1txYMwMCGYuNapEheiZVV0EoOZkXaIxSElPL-l0wmzBUFR2-t7tp4~1O4kYjDkENVjCV8CbNbR7Z07advxoBQUICTczuZNlVHoyp8MKs6l0LEfZRKORGhMe9h4g1~ze15oifZZYAB2kfp8lirdLdXLmHqBqzgKnDa-eJmm7XRFl-sz~CqdL8oSPYCCL61wEoPFqkh~-idbDQ__"
+            
+            src={car2}
             alt="Car 3"
-            className="col-span-2 rounded-lg object-cover"
+            className="col-span-2 rounded-lg object-cover h-96"
           />
         </div>
 

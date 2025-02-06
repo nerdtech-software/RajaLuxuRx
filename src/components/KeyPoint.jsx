@@ -1,12 +1,19 @@
-
+import carkey from "../assets/43f804b209a8bd2cf366afce91531736.jpg";
+import { default as car1, default as car2, default as car3 } from "../assets/car1.jpg";
 
 const KeyPoint = () => {
   const vehicles = [
-    { type: "SUV", passengers: 6, img: "https://via.placeholder.com/150" },
-    { type: "Jeep", passengers: 6, img: "https://via.placeholder.com/150" },
-    { type: "SUV", passengers: 6, img: "https://via.placeholder.com/150" },
+    { type: "SUV", passengers: 6, img: car1 },
+    { type: "Jeep", passengers: 6, img: car2 },
+    { type: "SUV", passengers: 6, img: car3 },
     
   ];
+
+
+  
+
+
+
 
   const points = [
     {
@@ -84,7 +91,7 @@ const KeyPoint = () => {
           <div className="lg:w-1/4 mt-8 lg:mt-0">
             <div className="relative">
               <img
-                src="https://s3-alpha-sig.figma.com/img/6c85/ceb3/43f804b209a8bd2cf366afce91531736?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Mwn0e~SKOdobb2qSDQ-3tSMNidlDa-iJi7gu~WEIGOp4bSakbiTkIkXfsUG7k2j2pdwOORFUVVEMIJmy3K8yyie8wLpC5-yohsEkanQbbxFjbh7JK1Spi5a45rr0qX16huQqhH56DKD-GSBF3OJM~~yOMtHQbRzh2slVnXm3VX2inuI6tLdQRcrOH0IJhe~pAUoIPQJp0XNukWmidi4dUTFkJMJpgUQnyRwIDvkjwuVLHVj1nAas7J13otfRntz8qC02FNA-8EvfWymh79CwsnfDVSTsZ7YZQVH9BjEP8aD2~G9-o9jlgc0b9GmjWxZXSI8KsY1NO4eE9WSWOKV1aQ__"
+                src={carkey}
                 alt="Car"
                 className=" shadow-lg "
               />

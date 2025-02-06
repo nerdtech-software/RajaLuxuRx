@@ -53,7 +53,7 @@ const Nav = () => {
                 onClick={toggleDropdown}
                 className="flex items-center hover:text-gray-300 transition duration-300"
               >
-                Vehicles8
+                Vehicles
                 <svg
                   className="w-4 h-4 ml-1"
                   xmlns="http://www.w3.org/2000/svg"

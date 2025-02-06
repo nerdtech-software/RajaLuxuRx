@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
-
+import car1 from "../assets/car1.jpg";
+import car3 from "../assets/car10.jpg";
+import car2 from "../assets/car8.jpg";
 const AboutUsInfo = () => {
   return (
     <div>
       {/* Hero Section */}
       <div
         className="relative bg-cover bg-center h-[300px] md:h-[500px]"
-        style={{
-          backgroundImage:
-            "url('https://s3-alpha-sig.figma.com/img/8ee7/6cee/f0e1aa0669c8bbe1fbad49c398671baa?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Bn0Gv6KEBFlcmuyGZeX8t7DryCR-Y6Vf6RunxQOWnVQwckxyYe3usvO~aa-bp~IG-zQu-VF25s4l-RMaCRueRijIGxp3CgCU~3EmqXfrgU6GF-yOr9Dxmrac-xCkB7lhuAC5QLMjn6kTGPw8NNya~j4Bnrye45TdoHo92mTmg30EfNEYp1YcfbBjjeuwS8~cZ8h1xeuwZsQlYZadx8CDbEhblJ39~BTT62dfbsPic6QOZZ4MaFNHtfQdyX1pvdZIKU28iUyX5PEOnX4uit~kt~3ELNJl7HA2T03GKxlS2QSUB9i2hoM6B~YdDbXm6h5PUNvAm6CU4NTiUx~nGV~Z6w__')",
-        }}
+        style={{ backgroundImage: `url(${car1})` }}
       >
         <div className="relative flex flex-col items-center justify-center text-center text-white h-full px-4">
           <h1 className="text-xl md:text-4xl font-bold">
@@ -36,7 +35,7 @@ const AboutUsInfo = () => {
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Image */}
             <img
-              src="https://s3-alpha-sig.figma.com/img/81a8/683f/075bcdf704ef9fbfa9f01073d27a7b93?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=M-tdOCT5MH-BCZ0CC-3Rqsvikyc7oX24YsCgoJLKLDYTjw6biDqV3A34fSMOrvfoNwqXW3nAzOSp070pFTMxQeHx1kyherHR3SVmLhvxm-SX2~jVCBku2AgU6ByuONicScfzTSK-IIZKTpZYCnI4I7Bj32kU8NqskA-cQmU34t22tlM7s2zJ~2M~03jKZ5yfSEVc5mmEuiziyyiHt0D8kUSuqA4gpsIIf-ujW1lvvQhcaWdAk9hMyHEZtp8dpQVKoleA6cZ6SoJBMu2wRzz7IiFXyzu3~oxLWlWs-32By71ZxVuVXlzEEBenQUCw9p82ZhLHKlrI68AchzR2bzfR6A__"
+              src={car2}
               alt="Luxury Car"
               className="max-w-full md:max-w-[400px] rounded-lg shadow-lg"
             />
@@ -77,7 +76,7 @@ const AboutUsInfo = () => {
             </div>
             {/* Image */}
             <img
-              src="https://s3-alpha-sig.figma.com/img/81a8/683f/075bcdf704ef9fbfa9f01073d27a7b93?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=M-tdOCT5MH-BCZ0CC-3Rqsvikyc7oX24YsCgoJLKLDYTjw6biDqV3A34fSMOrvfoNwqXW3nAzOSp070pFTMxQeHx1kyherHR3SVmLhvxm-SX2~jVCBku2AgU6ByuONicScfzTSK-IIZKTpZYCnI4I7Bj32kU8NqskA-cQmU34t22tlM7s2zJ~2M~03jKZ5yfSEVc5mmEuiziyyiHt0D8kUSuqA4gpsIIf-ujW1lvvQhcaWdAk9hMyHEZtp8dpQVKoleA6cZ6SoJBMu2wRzz7IiFXyzu3~oxLWlWs-32By71ZxVuVXlzEEBenQUCw9p82ZhLHKlrI68AchzR2bzfR6A__"
+              src={car3}
               alt="Limo Service"
               className="max-w-full md:max-w-[400px] rounded-lg shadow-lg"
             />

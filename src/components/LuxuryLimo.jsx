@@ -1,4 +1,4 @@
-
+import car1 from "../assets/car2.jpg";
 
 const LuxuryLimo = () => {
   return (
@@ -8,8 +8,7 @@ const LuxuryLimo = () => {
         <div className="lg:w-80 mt-8 lg:mt-0">
         <div className="relative">
           <img
-            src="https://s3-alpha-sig.figma.com/img/50aa/9940/8e2a8562dab9c713170bfb6cfb85ce40?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IU2X0AyUzC7rDtgRwmh3gWlpsws0w3NFG42H6FUpwoArYIE0vjalmMgQl6z2KSEP53VRoOZ2u6ItNt3GSdm~Jg~SzlnkjFpb9jQcB0szNbiFmMlh4x78EdaOLzdXVjjXDj2YvDvQ90wVvR7nTuR2jDRMvKR-q4FQ05~vNdxid1igUv7BcNDNO5VOi8MSVddivPeUpqkXmewTmr0IWdLfR-AacR26N5A1pmfdqXzgJuQqb19TSrtb9qS~ML3ThzMsH~UYoEFjjsJwK6QJOCQMuOjuaCCKjuVpmmevADmSxOdcJSqiW1HeK6pvBaN9tDQXG-IGvWvfChLuh01xSzPL0g__"
-            alt="Luxury Limo"
+            src={car1}
             className="rounded-lg shadow-lg"
             />
             <div className="absolute top-4 left-4 w-full h-full border-4 border-yellow-500 rounded-lg transform translate-x-2 translate-y-2"></div>
