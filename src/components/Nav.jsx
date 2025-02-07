@@ -23,7 +23,7 @@ const Nav = () => {
         <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <img src={Logo} alt="Logo" className="w-32 h-16" />
+            <img src={Logo} alt="Logo" className="w-32 h-16 object-contain" />
           </a>
 
           {/* Desktop Menu */}
