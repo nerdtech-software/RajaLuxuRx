@@ -1,127 +1,134 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import car from "../assets/af0b88853568b01076891995e8224974.jpeg";
+import { DirectionsRenderer, GoogleMap, useLoadScript } from "@react-google-maps/api";
+import axios from "axios";
+import { throttle } from "lodash";
+import React, { useCallback, useState } from "react";
 
-const BookingInfo = () => {
-  const [activeFAQ, setActiveFAQ] = useState(null);
+const GOOGLE_MAPS_API_KEY = "YOUR_GOOGLE_MAPS_API_KEY"; // Replace with your key
+const POSITIONSTACK_API_KEY = "fd31b8c22cbdc6dd04dfc392e117afa7";
+const libraries = ["places"];
 
-  const toggleFAQ = (index) => {
-    setActiveFAQ(activeFAQ === index ? null : index);
+const BookingForm = () => {
+  const [pickupLocation, setPickupLocation] = useState("");
+  const [dropoffLocation, setDropoffLocation] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [route, setRoute] = useState(null);
+
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: GOOGLE_MAPS_API_KEY,
+    libraries,
+  });
+
+  // Throttled Fetch Location Suggestions
+  const fetchSuggestions = useCallback(
+    throttle(async (query) => {
+      if (!query) return setSuggestions([]);
+      try {
+        const response = await axios.get("https://api.positionstack.com/v1/forward", {
+          params: { access_key: POSITIONSTACK_API_KEY, query },
+        });
+        setSuggestions(response.data.data);
+      } catch (error) {
+        console.error("Error fetching location suggestions:", error);
+      }
+    }, 500),
+    []
+  );
+
+  // Handle Selection
+  const handleSelectLocation = (location, type) => {
+    if (type === "pickup") setPickupLocation(location.label);
+    else setDropoffLocation(location.label);
+    setSuggestions([]);
+  };
+
+  // Get Directions
+  const fetchRoute = async () => {
+    if (!pickupLocation || !dropoffLocation) return;
+    const directionsService = new google.maps.DirectionsService();
+    const result = await directionsService.route({
+      origin: pickupLocation,
+      destination: dropoffLocation,
+      travelMode: google.maps.TravelMode.DRIVING,
+    });
+    setRoute(result);
   };
 
   return (
-    <div className="w-full space-y-16">
-      {/* Informational Grid Section */}
-      <section className="p-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">
-          What Should I Know Before Booking
+    <div className="flex space-x-6 p-6 bg-gray-100 min-h-screen">
+      {/* Left Form */}
+      <div className="bg-white p-6 rounded-lg shadow-lg w-2/3">
+        <h2 className="text-xl font-semibold mb-4">WHERE & WHEN</h2>
+
+        {/* Pickup Input */}
+        <div className="relative mt-4">
+          <input
+            type="text"
+            placeholder="Enter pickup location"
+            className="border p-2 w-full rounded-md"
+            value={pickupLocation}
+            onChange={(e) => {
+              setPickupLocation(e.target.value);
+              fetchSuggestions(e.target.value);
+            }}
+          />
+          {suggestions.length > 0 && (
+            <ul className="absolute bg-white border w-full mt-1 max-h-40 overflow-y-auto">
+              {suggestions.map((sug, index) => (
+                <li
+                  key={index}
+                  className="p-2 hover:bg-gray-200 cursor-pointer"
+                  onClick={() => handleSelectLocation(sug, "pickup")}
+                >
+                  {sug.label}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        {/* Dropoff Input */}
+        <div className="relative mt-4">
+          <input
+            type="text"
+            placeholder="Enter dropoff location"
+            className="border p-2 w-full rounded-md"
+            value={dropoffLocation}
+            onChange={(e) => {
+              setDropoffLocation(e.target.value);
+              fetchSuggestions(e.target.value);
+            }}
+          />
+        </div>
+
+        {/* Buttons */}
+        <div className="mt-6 flex justify-between">
+          <button className="border px-6 py-2 rounded-md">Cancel</button>
+          <button
+            className="bg-black text-white px-6 py-2 rounded-md"
+            onClick={fetchRoute}
+          >
+            Show Route
+          </button>
+        </div>
+      </div>
+
+      {/* Right Panel (Google Map) */}
+      <div className="bg-white p-6 rounded-lg shadow-lg w-1/3">
+        <h2 className="text-xl font-semibold bg-black text-white p-2 rounded-md">
+          Route Preview
         </h2>
-        <p className="text-gray-600 max-w-3xl mx-auto">
-          Planning to hire one of our vehicles for a very special occasion?
-          These guidelines will answer your questions about limousines and
-          party bus rentals, ensuring a smooth and unforgettable celebration.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8 px-10">
-          {[
-            {
-              title: "Budgeting for Limos",
-              text: "Wedding limo costs depend on the number of vehicles needed.",
-              image: "https://s3-alpha-sig.figma.com/img/74e5/3b6d/24f8605aa460e7dc3f2cdbb443513750?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CbHUAhnts6pDpqcP3ARPWjzEXQKJI9pgDd6yBBDM7jj0t-o~1XQ1USV5gtc5qDXz0Qd-3siNBLIvfA8e4Heu2A2ZVdUyKjupapZntHqzZ4qf7hiGdXC8QoKt4Z4caSU5NwUpPB~U4aI0r9dtM6ZN0EYZ8c0KsdHBLQLFCqf7A-Y4V8CojIQpf~F1v2Ekwy7MlmAxW1tZp-S2sBhwiCjc5Nr2L1wOr89caiLfnt7tHIMuVu-s~tdWORstXUa0H9vO8OAyh-G596NZQOevLOXvhqWCR13FFl~PckQHFpzc98etAX~TRXUnhGgV-3LXukuiL6t-zLDzdXIWClIwhY8SBw__",
-            },
-            {
-              title: "Reserving Your Vehicle",
-              text: "Our website displays available vehicles for immediate rental.",
-              image: "https://s3-alpha-sig.figma.com/img/74e5/3b6d/24f8605aa460e7dc3f2cdbb443513750?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CbHUAhnts6pDpqcP3ARPWjzEXQKJI9pgDd6yBBDM7jj0t-o~1XQ1USV5gtc5qDXz0Qd-3siNBLIvfA8e4Heu2A2ZVdUyKjupapZntHqzZ4qf7hiGdXC8QoKt4Z4caSU5NwUpPB~U4aI0r9dtM6ZN0EYZ8c0KsdHBLQLFCqf7A-Y4V8CojIQpf~F1v2Ekwy7MlmAxW1tZp-S2sBhwiCjc5Nr2L1wOr89caiLfnt7tHIMuVu-s~tdWORstXUa0H9vO8OAyh-G596NZQOevLOXvhqWCR13FFl~PckQHFpzc98etAX~TRXUnhGgV-3LXukuiL6t-zLDzdXIWClIwhY8SBw__",
-            },
-            {
-              title: "Best Time to Marry in Chicago",
-              text: "Spring offers ideal weather for Chicago weddings.",
-              image: "https://s3-alpha-sig.figma.com/img/74e5/3b6d/24f8605aa460e7dc3f2cdbb443513750?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CbHUAhnts6pDpqcP3ARPWjzEXQKJI9pgDd6yBBDM7jj0t-o~1XQ1USV5gtc5qDXz0Qd-3siNBLIvfA8e4Heu2A2ZVdUyKjupapZntHqzZ4qf7hiGdXC8QoKt4Z4caSU5NwUpPB~U4aI0r9dtM6ZN0EYZ8c0KsdHBLQLFCqf7A-Y4V8CojIQpf~F1v2Ekwy7MlmAxW1tZp-S2sBhwiCjc5Nr2L1wOr89caiLfnt7tHIMuVu-s~tdWORstXUa0H9vO8OAyh-G596NZQOevLOXvhqWCR13FFl~PckQHFpzc98etAX~TRXUnhGgV-3LXukuiL6t-zLDzdXIWClIwhY8SBw__",
-            },
-            {
-              title: "Choosing a Stretch Limo",
-              text: "The type of event and number of guests will determine the vehicle size.",
-              image: "https://s3-alpha-sig.figma.com/img/74e5/3b6d/24f8605aa460e7dc3f2cdbb443513750?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CbHUAhnts6pDpqcP3ARPWjzEXQKJI9pgDd6yBBDM7jj0t-o~1XQ1USV5gtc5qDXz0Qd-3siNBLIvfA8e4Heu2A2ZVdUyKjupapZntHqzZ4qf7hiGdXC8QoKt4Z4caSU5NwUpPB~U4aI0r9dtM6ZN0EYZ8c0KsdHBLQLFCqf7A-Y4V8CojIQpf~F1v2Ekwy7MlmAxW1tZp-S2sBhwiCjc5Nr2L1wOr89caiLfnt7tHIMuVu-s~tdWORstXUa0H9vO8OAyh-G596NZQOevLOXvhqWCR13FFl~PckQHFpzc98etAX~TRXUnhGgV-3LXukuiL6t-zLDzdXIWClIwhY8SBw__",
-            },
-          ].map((item, index) => (
-            <div key={index} className="text-center  ">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="mx-auto  shadow-md w-44 "
-              />
-              <h3 className="text-lg font-semibold mt-4">{item.title}</h3>
-              <p className="text-gray-500 mt-2">{item.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Hero Banner Section */}
-      <section
-  className="relative text-center bg-cover bg-center h-64 md:h-96 flex items-center justify-center mx-16"
-  style={{
-    backgroundImage: `url(${car})`, // Assuming 'car' contains the URL of the image
-  }}
->
-  <div className="bg-black bg-opacity-50 p-20    ">
-    <h2 className="text-3xl font-bold text-white mb-4">
-      Unmatched Customer <br /> Satisfaction
-    </h2>
-    <Link to="/booking"><button className="mt-6 bg-yellow-600 text-white py-2 px-6  hover:bg-yellow-700">
-            Book Now
-          </button></Link>
-  </div>
-</section>
-
-      {/* FAQ Section */}
-      <section className="p-8">
-        <h2 className="text-2xl font-bold text-center mb-8">FAQ</h2>
-        <div className="max-w-3xl mx-auto space-y-4">
-          {[
-            {
-              question: "What types of vehicles do you offer?",
-              answer:
-                "We offer a variety of vehicles including limousines, SUVs, and party buses.",
-            },
-            {
-              question: "Do your prices include gratuity, taxes, and fees?",
-              answer:
-                "Yes, our prices are all-inclusive with no hidden charges.",
-            },
-            {
-              question: "How far in advance should I book?",
-              answer:
-                "It’s best to book at least 2 weeks in advance to ensure availability.",
-            },
-            {
-              question: "Do you offer point-to-point services or hourly rentals?",
-              answer:
-                "We offer both options based on your needs and preferences.",
-            },
-            {
-              question: "What is your cancellation policy?",
-              answer:
-                "Cancellations within 6 hours of service incur a base fare charge. Contact us for details.",
-            },
-          ].map((item, index) => (
-            <div key={index} className="border-b">
-              <button
-                className="w-full text-left py-4 flex justify-between items-center"
-                onClick={() => toggleFAQ(index)}
-              >
-                <span>{item.question}</span>
-                <span>{activeFAQ === index ? "−" : "+"}</span>
-              </button>
-              {activeFAQ === index && (
-                <p className="text-gray-600 mt-2">{item.answer}</p>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+        {isLoaded && (
+          <GoogleMap
+            center={{ lat: 37.7749, lng: -122.4194 }}
+            zoom={12}
+            mapContainerStyle={{ width: "100%", height: "300px" }}
+          >
+            {route && <DirectionsRenderer directions={route} />}
+          </GoogleMap>
+        )}
+      </div>
     </div>
   );
 };
 
-export default BookingInfo;
+export default BookingForm;

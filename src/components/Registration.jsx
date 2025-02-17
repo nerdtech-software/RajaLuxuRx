@@ -8,7 +8,7 @@ const Registration = () => {
             <h1 className="text-2xl font-bold mb-4">Best Rental Car</h1>
             <h2 className="text-4xl font-bold mb-6">Book Your Ride</h2>
             <p className="text-gray-600 mb-6">
-              Experience Chicago in unparalleled style and comfort with Hi88Limo,
+              Experience Chicago in unparalleled style and comfort with Limousine,
               your premier destination for luxurious limousine services. Whether
               you’re seeking a grand entrance for a special occasion, or a
               stress-free ride to the airport.

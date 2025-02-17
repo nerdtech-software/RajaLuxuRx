@@ -42,10 +42,10 @@ const AboutUsInfo = () => {
             {/* Text Content */}
             <div className="space-y-4 text-center md:text-left">
               <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
-                Hi88Limo – The Premier Limousine And Car Service In Chicago
+                Limousine – The Premier Limousine And Car Service In Chicago
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                Experience luxury and convenience with Hi88Limo, the leading car
+                Experience luxury and convenience with Limousine, the leading car
                 and limo service in Chicago. Renowned for exceptional
                 transportation services, you can enjoy being chauffeured in
                 state-of-the-art premium cars.

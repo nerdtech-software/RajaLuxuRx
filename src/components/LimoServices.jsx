@@ -4,7 +4,7 @@ import car1 from "../assets/car4.jpg";
 import car2 from "../assets/car5.jpg";
 import car3 from "../assets/car6.jpg";
 
-const LimoServices = () => {
+const Limousineervices = () => {
   const [activeTab, setActiveTab] = useState("Sedan");
 
   const toggleTab = (tab) => {
@@ -14,64 +14,64 @@ const LimoServices = () => {
   return (
     <div className="min-h-screen bg-gray-100 py-12">
       {/* Top Section */}
-      <div className="container mx-auto px-4 lg:flex lg:items-start lg:gap-12">
-        {/* Image Collage */}
-        <div className="lg:w-1/2 grid grid-cols-2 gap-4">
-          <img
-           src={car1}
-           
-            alt="Car 1"
-            className="rounded-lg object-cover w-72"
-          />
-          <img
+     <div className="container mx-auto px-4 lg:flex lg:items-start lg:gap-12 py-10">
+      {/* Image Collage */}
+      <div className="lg:w-1/2 relative">
+        {/* Main Large Image */}
+        <img src={car1} alt="Car 1" className="rounded-xl w-full h-auto shadow-lg" />
+
+        {/* Top Right Small Image */}
+        <img
+          src={car2}
+          alt="Car 2"
+          className="absolute top-4 right-4 rounded-lg w-48 h-36 shadow-md"
+        />
+
+        {/* Bottom Right Small Image */}
+        <img
           src={car3}
-            className="rounded-lg object-cover"
-          />
-          <img
-            
-            src={car2}
-            alt="Car 3"
-            className="col-span-2 rounded-lg object-cover h-96"
-          />
-        </div>
+          alt="Car 3"
+          className="absolute bottom-4 right-4 rounded-lg w-56 h-40 shadow-md"
+        />
+      </div>
 
-        {/* Accordion Section */}
-        <div className="lg:w-1/2 space-y-6">
-          <h1 className="text-3xl font-bold">Choosing the Right Vehicle</h1>
+      {/* Accordion Section */}
+      <div className="lg:w-1/2 space-y-6">
+        <h1 className="text-3xl font-bold">Choosing the Right Vehicle</h1>
 
-          {/* Accordion Items */}
-          <div className="space-y-4">
-            {[
-              { title: "Sedan", description: "Hi88Limo offers affordable van rentals in Chicago for various occasions, including passenger vans and minivans. Our Sprinter van rentals are a good option for both business and leisure trips." },
-              { title: "SUV Limos", description: "Spacious and luxurious, perfect for group travel or corporate events." },
-              { title: "Stretch Limo SUVs", description: "Ideal for weddings and large group events." },
-              { title: "Stretch Limos", description: "Classic luxury for special occasions like proms and anniversaries." },
-              { title: "Luxury Passenger Van", description: "Comfortable vans for long-distance travel." },
-              { title: "How do I connect with other enthusiasts?", description: "Reach out to our community events or join our social media channels." },
-            ].map((item, index) => (
-              <div key={index} className="border rounded-lg">
-                <button
-                  className="w-full flex justify-between items-center px-4 py-2 text-left"
-                  onClick={() => toggleTab(item.title)}
-                >
-                  <span className="font-medium">{item.title}</span>
-                  <span>{activeTab === item.title ? "-" : "+"}</span>
-                </button>
-                {activeTab === item.title && (
-                  <div className="px-4 py-2 text-gray-600">{item.description}</div>
-                )}
-              </div>
-            ))}
-          </div>
+        {/* Accordion Items */}
+        <div className="space-y-4">
+          {[
+            { title: "Sedan", description: "Limousine offers affordable van rentals in Chicago for various occasions, including passenger vans and minivans. Our Sprinter van rentals are a good option for both business and leisure trips." },
+            { title: "SUV Limousine", description: "Spacious and luxurious, perfect for group travel or corporate events." },
+            { title: "Stretch Limo SUVs", description: "Ideal for weddings and large group events." },
+            { title: "Stretch Limousine", description: "Classic luxury for special occasions like proms and anniversaries." },
+            { title: "Luxury Passenger Van", description: "Comfortable vans for long-distance travel." },
+            { title: "How do I connect with other enthusiasts?", description: "Reach out to our community events or join our social media channels." },
+          ].map((item, index) => (
+            <div key={index} className="border rounded-lg">
+              <button
+                className="w-full flex justify-between items-center px-4 py-2 text-left"
+                onClick={() => toggleTab(item.title)}
+              >
+                <span className="font-medium">{item.title}</span>
+                <span>{activeTab === item.title ? "-" : "+"}</span>
+              </button>
+              {activeTab === item.title && (
+                <div className="px-4 py-2 text-gray-600">{item.description}</div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
+    </div>
 
       {/* Bottom Section */}
       <div className="container mx-auto px-4 mt-12 bg-white   py-8 flex flex-col lg:flex-row lg:items-center lg:justify-center">
         <div className="space-y-4 lg:w-3/4">
           <h2 className="text-2xl font-bold">Limo Services</h2>
           <p className="text-gray-600 ">
-            Hi88Limo goes beyond ordinary car services, offering a variety of
+            Limousine goes beyond ordinary car services, offering a variety of
             limousine options to elevate any event. <br /> Whether you require a
             professional presence for corporate events, a dignified ride for
             funerals, or a luxurious <br /> start or end to your journey, we’ll have
@@ -113,10 +113,10 @@ const LimoServices = () => {
         <h2 className="text-2xl font-bold">Why choose our limo services</h2>
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { title: "Diverse Fleet", icon: "🚗", text: "Choose from a variety of limousines including classic stretch limos, executive sedans, spacious SUVs." },
-            { title: "Professional Service", icon: "👨‍💼", text: "Choose from a variety of limousines including classic stretch limos, executive sedans, spacious SUVs." },
-            { title: "Comfort & Convenience", icon: "🛋️", text: "Choose from a variety of limousines including classic stretch limos, executive sedans, spacious SUVs." },
-            { title: "Seamless Experience", icon: "🔗", text: "Choose from a variety of limousines including classic stretch limos, executive sedans, spacious SUVs." },
+            { title: "Diverse Fleet", icon: "🚗", text: "Choose from a variety of limousines including classic stretch Limousine, executive sedans, spacious SUVs." },
+            { title: "Professional Service", icon: "👨‍💼", text: "Choose from a variety of limousines including classic stretch Limousine, executive sedans, spacious SUVs." },
+            { title: "Comfort & Convenience", icon: "🛋️", text: "Choose from a variety of limousines including classic stretch Limousine, executive sedans, spacious SUVs." },
+            { title: "Seamless Experience", icon: "🔗", text: "Choose from a variety of limousines including classic stretch Limousine, executive sedans, spacious SUVs." },
           ].map((item, index) => (
             <div key={index} className="p-6 bg-gray-100 rounded-lg shadow-sm text-center">
               <div className="text-3xl">{item.icon}</div>
@@ -132,4 +132,4 @@ const LimoServices = () => {
   );
 };
 
-export default LimoServices;
+export default Limousineervices;

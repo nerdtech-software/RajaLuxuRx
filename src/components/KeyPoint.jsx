@@ -4,8 +4,8 @@ import { default as car1, default as car2, default as car3 } from "../assets/car
 const KeyPoint = () => {
   const vehicles = [
     { type: "SUV", passengers: 6, img: car1 },
-    { type: "Jeep", passengers: 6, img: car2 },
-    { type: "SUV", passengers: 6, img: car3 },
+    { type: "Sedan", passengers: 6, img: car2 },
+    { type: "Sprinter", passengers: 6, img: car3 },
     
   ];
 
@@ -18,19 +18,19 @@ const KeyPoint = () => {
   const points = [
     {
       title: "Late-Model Vehicles",
-      description: "Hi88Limo maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
+      description: "Limousine maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
     },
     {
       title: "Diverse Options",
-      description: "Hi88Limo maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
+      description: "Limousine maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
     },
     {
       title: "Luxury and Comfort",
-      description: "Hi88Limo maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
+      description: "Limousine maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
     },
     {
       title: "Party Atmosphere",
-      description: "Hi88Limo maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
+      description: "Limousine maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
     },
   ];
 
