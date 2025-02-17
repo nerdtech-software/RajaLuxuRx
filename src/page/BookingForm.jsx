@@ -21,7 +21,7 @@ const BookingForm = () => {
       >
         <div className="relative flex flex-col items-center justify-center text-center text-white h-full px-4">
           <h1 className="text-xl md:text-4xl font-bold">
-            Elite O’Hare Limo Airport <br /> Services
+            Elite O’Hare Limo Airport <br /> Booking
           </h1>
           <Link to="/booking">
             <button className="mt-6 bg-yellow-600 text-white py-2 px-6 rounded-md hover:bg-yellow-700">
