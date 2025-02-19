@@ -34,8 +34,9 @@ const Registration = () => {
                 </label>
                 <select className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-yellow-300">
                   <option value="">Select</option>
-                  <option value="luxury">Luxury</option>
-                  <option value="economy">Economy</option>
+                  <option value="luxury">SUV</option>
+                  <option value="economy">Sedan</option>
+                  <option value="economy">Sprinter</option>
                 </select>
               </div>
 
