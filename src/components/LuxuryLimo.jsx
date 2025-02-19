@@ -25,22 +25,22 @@ const LuxuryLimo = () => {
               {
                 title: "Luxury experience",
                 description:
-                  "Hi8Limo maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
+                  "RajaLuxury maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
               },
               {
                 title: "Stress-free travel",
                 description:
-                  "Hi8Limo maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
+                  "RajaLuxurymaintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
               },
               {
                 title: "Technology",
                 description:
-                  "Hi8Limo maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
+                  "RajaLuxurymaintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
               },
               {
                 title: "Versatility",
                 description:
-                  "Hi8Limo maintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
+                  "RajaLuxurymaintains a fleet of up-to-date vehicles to ensure comfort, reliability, and safety.",
               },
             ].map((item, index) => (
               <li key={index} className="flex items-start">
