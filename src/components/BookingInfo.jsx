@@ -1,5 +1,6 @@
 import { useState } from "react";
 import car from "../assets/af0b88853568b01076891995e8224974.jpeg";
+import car1 from "../assets/car11.jpg";
 const BookingInfo = () => {
   const [activeFAQ, setActiveFAQ] = useState(null);
   const toggleFAQ = (index) => {
@@ -22,22 +23,22 @@ const BookingInfo = () => {
             {
               title: "Budgeting for Limos",
               text: "Wedding limo costs depend on the number of vehicles needed.",
-              image: "https://s3-alpha-sig.figma.com/img/74e5/3b6d/24f8605aa460e7dc3f2cdbb443513750?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CbHUAhnts6pDpqcP3ARPWjzEXQKJI9pgDd6yBBDM7jj0t-o~1XQ1USV5gtc5qDXz0Qd-3siNBLIvfA8e4Heu2A2ZVdUyKjupapZntHqzZ4qf7hiGdXC8QoKt4Z4caSU5NwUpPB~U4aI0r9dtM6ZN0EYZ8c0KsdHBLQLFCqf7A-Y4V8CojIQpf~F1v2Ekwy7MlmAxW1tZp-S2sBhwiCjc5Nr2L1wOr89caiLfnt7tHIMuVu-s~tdWORstXUa0H9vO8OAyh-G596NZQOevLOXvhqWCR13FFl~PckQHFpzc98etAX~TRXUnhGgV-3LXukuiL6t-zLDzdXIWClIwhY8SBw__",
+              image: car1,
             },
             {
               title: "Reserving Your Vehicle",
               text: "Our website displays available vehicles for immediate rental.",
-              image: "https://s3-alpha-sig.figma.com/img/74e5/3b6d/24f8605aa460e7dc3f2cdbb443513750?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CbHUAhnts6pDpqcP3ARPWjzEXQKJI9pgDd6yBBDM7jj0t-o~1XQ1USV5gtc5qDXz0Qd-3siNBLIvfA8e4Heu2A2ZVdUyKjupapZntHqzZ4qf7hiGdXC8QoKt4Z4caSU5NwUpPB~U4aI0r9dtM6ZN0EYZ8c0KsdHBLQLFCqf7A-Y4V8CojIQpf~F1v2Ekwy7MlmAxW1tZp-S2sBhwiCjc5Nr2L1wOr89caiLfnt7tHIMuVu-s~tdWORstXUa0H9vO8OAyh-G596NZQOevLOXvhqWCR13FFl~PckQHFpzc98etAX~TRXUnhGgV-3LXukuiL6t-zLDzdXIWClIwhY8SBw__",
+              image: car1,
             },
             {
               title: "Best Time to Marry in Chicago",
               text: "Spring offers ideal weather for Chicago weddings.",
-              image: "https://s3-alpha-sig.figma.com/img/74e5/3b6d/24f8605aa460e7dc3f2cdbb443513750?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CbHUAhnts6pDpqcP3ARPWjzEXQKJI9pgDd6yBBDM7jj0t-o~1XQ1USV5gtc5qDXz0Qd-3siNBLIvfA8e4Heu2A2ZVdUyKjupapZntHqzZ4qf7hiGdXC8QoKt4Z4caSU5NwUpPB~U4aI0r9dtM6ZN0EYZ8c0KsdHBLQLFCqf7A-Y4V8CojIQpf~F1v2Ekwy7MlmAxW1tZp-S2sBhwiCjc5Nr2L1wOr89caiLfnt7tHIMuVu-s~tdWORstXUa0H9vO8OAyh-G596NZQOevLOXvhqWCR13FFl~PckQHFpzc98etAX~TRXUnhGgV-3LXukuiL6t-zLDzdXIWClIwhY8SBw__",
+              image: car1,
             },
             {
               title: "Choosing a Stretch Limo",
               text: "The type of event and number of guests will determine the vehicle size.",
-              image: "https://s3-alpha-sig.figma.com/img/74e5/3b6d/24f8605aa460e7dc3f2cdbb443513750?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CbHUAhnts6pDpqcP3ARPWjzEXQKJI9pgDd6yBBDM7jj0t-o~1XQ1USV5gtc5qDXz0Qd-3siNBLIvfA8e4Heu2A2ZVdUyKjupapZntHqzZ4qf7hiGdXC8QoKt4Z4caSU5NwUpPB~U4aI0r9dtM6ZN0EYZ8c0KsdHBLQLFCqf7A-Y4V8CojIQpf~F1v2Ekwy7MlmAxW1tZp-S2sBhwiCjc5Nr2L1wOr89caiLfnt7tHIMuVu-s~tdWORstXUa0H9vO8OAyh-G596NZQOevLOXvhqWCR13FFl~PckQHFpzc98etAX~TRXUnhGgV-3LXukuiL6t-zLDzdXIWClIwhY8SBw__",
+              image: car1,
             },
           ].map((item, index) => (
             <div key={index} className="text-center  ">
