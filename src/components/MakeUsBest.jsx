@@ -1,16 +1,13 @@
-import { Link } from "react-router-dom"
-
-
+import { Link } from "react-router-dom";
+import car1 from "../assets/car1.jpg";
+import car2 from "../assets/car8.jpg";
 const MakeUsBest = () => {
   return (
     <div > 
        <div
-    className="relative bg-cover bg-center h-[400px] md:h-[500px]"
-    style={{
-      backgroundImage:
-        "url('https://s3-alpha-sig.figma.com/img/8ee7/6cee/f0e1aa0669c8bbe1fbad49c398671baa?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Bn0Gv6KEBFlcmuyGZeX8t7DryCR-Y6Vf6RunxQOWnVQwckxyYe3usvO~aa-bp~IG-zQu-VF25s4l-RMaCRueRijIGxp3CgCU~3EmqXfrgU6GF-yOr9Dxmrac-xCkB7lhuAC5QLMjn6kTGPw8NNya~j4Bnrye45TdoHo92mTmg30EfNEYp1YcfbBjjeuwS8~cZ8h1xeuwZsQlYZadx8CDbEhblJ39~BTT62dfbsPic6QOZZ4MaFNHtfQdyX1pvdZIKU28iUyX5PEOnX4uit~kt~3ELNJl7HA2T03GKxlS2QSUB9i2hoM6B~YdDbXm6h5PUNvAm6CU4NTiUx~nGV~Z6w__')", // Replace with your car image URL
-    }}
-  >
+              className="relative bg-cover bg-center h-[300px] md:h-[500px]"
+              style={{ backgroundImage: `url(${car1})` }}
+            >
      <div className="relative flex flex-col items-center justify-center text-center text-white h-full">
       <h1 className="text-2xl md:text-4xl font-bold">
       Elite O’Hare Limo Airport <br />Services
@@ -38,7 +35,7 @@ const MakeUsBest = () => {
       <div className="grid md:grid-cols-2 gap-8">
         <div className="h-96 flex justify-center items-center" style={{
       backgroundImage:
-        "url('https://s3-alpha-sig.figma.com/img/13c0/b7a1/004be7614446e6282e2cfd0e2ba3dd85?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=brC9xmU9hYTaIamsdFIdOtKnsaJdG7ndhomhWzSlgImnOK4Uv3CufWmoDkduowfdxqA9ADwXGXiZ8RS~8adMmhM1YCPCqosVi1wIoWMXyGdLWUF03xyEdMVnBxcqImXD34M8GqSnEkeXsgabsJtRUsz0W0ghgPWX34UukGfR3dSXmQTj6NVSzZ822xMM5rKu76gX5XMnbkdU2sLd~8mkD1ZXOI4bzXXN~9WjGJphB84~~rEZ4QNS9SjLfJqsAJ~UHsIB50Vq1FK09lCs3RbPlZ3L4mGYsvDJHbtiGdR~EZnJggUiOjDQvpbWGFzmFfThgD4oiilcp~bRubg2xdQmBQ__')", // Replace with your car image URL
+        `url(${car2})`,
     }}>
          
         </div>

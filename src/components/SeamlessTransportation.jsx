@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
-
+import car1 from "../assets/car1.jpg";
+import car3 from "../assets/car10.jpg";
+import car2 from "../assets/car8.jpg";
 const SeamlessTransportation = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const slides = [
     {
-      image: "https://s3-alpha-sig.figma.com/img/200a/d010/bc3649d12168874deedca8afff3cdfd0?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=R~myJSBuvB3FGSpDdnWrVqZvd6ChUpdlXB0glwrULLEl2K~Av0f3H2G1quZ7IijQ6kCtqIyX-~F5QJvbFk1nfesCMiueLS8AWaEZVYAHA0dYEIYLpmZK~TKNSbGJcH5zuO7TBSaa~qRC~Wa3RtniC8qij05r2bqyGfqIyVbw0TSGohC4nWYKbwxCMoWn~qLpoGDFL5sdXOjYdwI8BE5dT6g7lUzuc03TOzqfkrBZ3PMkN7PXtIXtQ0eq0aZePOa9JF2gJgoCEes2bDI5RhiRjJvbe0Fdhy9G2BnHpkMYypnBL5lnV8aVwR2wA-scTe2lJFI8iVq4~hBqGPa0hKPM2Q__",
+      image: car1,
      
     },
     {
-      image: "https://s3-alpha-sig.figma.com/img/ca63/2536/d11fc883acd39728bcf784de59d4fbb6?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=p9rR5G2nXU47eW21ABI1Edkj9JnclV3hunNaf30tVQ-YJNiLpD9ju9Rj-ePmoiWSji6qrXRBW2yPsPGWZXtzGHMWwoez0Fcm4CtQeICpPp08EmhTjjuRbc4V4GpS76luz5uhqzXj9jMjcHzHTs~cVOpnTOd9Sykjp57iKy8DFvmNxbflhYnrBh-8gCuAHAfKzWNq1v7EGDwQEkK1hqbhCJpAUwUJbO5SB1I-P9AG94K9ZHF4mDR66x4kn28XtZNc0QCE~8EjFsTAwrSbGKa5tMHDdby3FETaWJXUWBDLrNGKKnle7Qs-IjCCFJjJbtG4CfN7w646rzLSWOnNkwVJPQ__",
+      image: car2,
      
     },
     {
-      image: "https://s3-alpha-sig.figma.com/img/c91f/2222/183b3faafd5f0cabc2c9165c8a5a99eb?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=AdCxivbHgkKPoBTUKL6lX7uHt5pMqK0UDnkMMfzLv-yADGG1-AypuMiPqtWz8aJKoqpClYU672o8TvW6GgUWMhi7gVLqDBsc6X1rrTVA8yy~TBLuSBOAwFa0fmK-Zb8m4czaka-Jv3FOEfhRStRoQTwu8ZdDja9VNYVz9E0VPKY1aVg4aQENy5p0n7Nstb4KaPn955f7VtWFNcgP-2u1FpiXUngYUQQTwa6L6rD7f7FDaoGWfNBHH2tQMljK7E20xoVhJOf9cuPvgrPaBeUcEr~fAqofbasyjFLCGliw-6IfogYX47rXbO5RD8EJtTYtS-LIBwmoyXecJYaMWXFy7g__",
-      
+      image: car3,
     },
   ];
 
